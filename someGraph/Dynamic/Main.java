@@ -31,7 +31,7 @@ public class Main {
         //WARNING!!! 4 COPY-PASTE
         while (!distancesPriorityQueue.isEmpty()) {
             Vertices vertx = distancesPriorityQueue.poll();
-            if(vertx.i-1>0){
+            if(vertx.i-1>=0){
                 int a =vertx.distance + matrixOfValues[vertx.i-1][vertx.j];
                 matrixOfDistance[vertx.i-1][vertx.j].distance= min(matrixOfDistance[vertx.i-1][vertx.j].distance, a);
                 if (matrixOfDistance[vertx.i-1][vertx.j].distance==a){
@@ -57,7 +57,7 @@ public class Main {
                 }
 
             }
-            if(vertx.j-1>0){
+            if(vertx.j-1>=0){
                 int c =vertx.distance + matrixOfValues[vertx.i][vertx.j-1];
                 matrixOfDistance[vertx.i][vertx.j-1].distance= min(matrixOfDistance[vertx.i][vertx.j-1].distance, c);
                 if(matrixOfDistance[vertx.i][vertx.j-1].distance==c){
